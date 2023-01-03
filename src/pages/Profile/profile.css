@@ -1,0 +1,7 @@
+.card_profile_stats img{
+  width:86px;
+  height:86px ;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid lightgray;
+}

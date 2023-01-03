@@ -64,7 +64,7 @@ const Home = () => {
     try {
       const res = await exportUserToCSV()
       console.log(res)
-      if(res.status == 200){
+      if(res.status === 200){
         window.open(res.data.downloadUrl, "blank")
       }else{
         toast.error('oops when dowloading to csv')

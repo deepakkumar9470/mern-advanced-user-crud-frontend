@@ -4,7 +4,6 @@ import Select from 'react-select'
 import './edit.css'
 import { editUser, getSingleUserById } from '../../services/api'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loader from '../../components/Loader/Loader'
 import { BASE_URL } from '../../services/helper'
 import { toast } from 'react-hot-toast'
 import { FcCheckmark } from "react-icons/fc";
@@ -29,7 +28,7 @@ const[imageData,setImgData] = useState("")
 const [preview,setPreview] = useState("")
 const navigate = useNavigate()
 
-  const [loading,setLoading] = useState(true)
+
   const {id} = useParams()
   
   useEffect(() => {
@@ -76,24 +75,24 @@ const navigate = useNavigate()
  const handleSubmit = async (e) =>{
   e.preventDefault()
   const {firstName,lastName,email,mobile,gender,location} = inputs
-  if(firstName == ""){
+  if(firstName === ""){
     toast.error('First name is required')
-  }else if(lastName == ""){
+  }else if(lastName === ""){
     toast.error('Last name is required') 
-  }else if(email == ""){
+  }else if(email === ""){
     toast.error('Email is required')
     
   }else if(!email.includes("@")){
     toast.error('Invalid email!')
-  }else if(mobile == ""){
+  }else if(mobile === ""){
     toast.error('Mobile no  is required')
   }else if(mobile.length > 10){
     toast.error('Enter valid mobile no')
-  }else if(gender == ""){
+  }else if(gender === ""){
     toast.error('Gender is required')
-  }else if(location == ""){
+  }else if(location === ""){
     toast.error('Location is required')
-  }else if(status == ""){
+  }else if(status === ""){
     toast.error('Status is required')
   }else{
        
@@ -156,7 +155,7 @@ const navigate = useNavigate()
                 type={`radio`} 
                 name={`gender` }
                 label={`Male`}
-                checked={inputs.gender == "Male" ? true : false}
+                checked={inputs.gender === "Male" ? true : false}
                 value={`Male`}
                 onChange={handleInputChange}
                 />
@@ -164,7 +163,7 @@ const navigate = useNavigate()
                 type={`radio`} 
                 name={`gender` }
                 label={`Female`}
-                checked={inputs.gender == "Female" ? true : false}
+                checked={inputs.gender === "Female" ? true : false}
                 value={`Female`}
                 onChange={handleInputChange}
                 />

@@ -8,7 +8,7 @@ import Loader from '../../components/Loader/Loader'
 import { FcIphone } from "react-icons/fc";
 import { FaMale } from "react-icons/fa";
 import { GrUserFemale } from "react-icons/gr";
-import { MdOutlineMailOutline,MdLocationOn,MdOutlineDateRange } from "react-icons/md";
+import { MdOutlineMailOutline,MdLocationOn } from "react-icons/md";
 
 
 const Profile = () => {
@@ -54,7 +54,7 @@ const Profile = () => {
             <h4>{user.firstName + user.lastName}</h4>
             <h5><MdOutlineMailOutline/> &nbsp;<span>{user.email}</span></h5>
             <h5><FcIphone/>&nbsp;<span>{user.mobile}</span></h5>
-            <h5><span>{user.gender == "Male" ? <FaMale/> : <GrUserFemale/>} {user.gender}</span></h5>
+            <h5><span>{user.gender === "Male" ? <FaMale/> : <GrUserFemale/>} {user.gender}</span></h5>
             <h5><MdLocationOn/>&nbsp;<span>{user.location}</span></h5>
           </div>
         </Card.Body>

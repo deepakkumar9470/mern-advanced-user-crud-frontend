@@ -35,7 +35,6 @@ const navigate = useNavigate()
     const getUserById =  async () =>{
          try {
           const res = await getSingleUserById(id)
-          console.log(res)
          if(res.status === 200){
           setInputs(res.data)
           setStatus(res.data.status)
@@ -108,7 +107,7 @@ const navigate = useNavigate()
       const config = {
         "Content-Type" : "multipart/form-data"
       } 
-      const res = await editUser(id,formdata,config)
+       await editUser(id,formdata,config)
       toast.success('User updated Successfully', {icon : <FcCheckmark/>})
       navigate('/') 
     } catch (error) {

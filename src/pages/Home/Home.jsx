@@ -23,7 +23,7 @@ const Home = () => {
      try {
          const res = await getUsers(search,gender,status,sort,page)
          console.log(res.data.Pagination.pageCount)
-         if(res.status == 200){
+         if(res.status === 200){
           setUsers(res.data.user)
           setPageCount(res.data.Pagination.pageCount)
          }

@@ -20,7 +20,7 @@ const MyTable = ({users,deleteCurrentUser,getUsersData,page,setPage,pageCount,pa
       try {
         
         const res = await changedUserStatus(id,status)
-        if(res.status ==200){
+        if(res.status === 200){
           getUsersData()
           toast.success('Status changed successfully')
         }
@@ -61,7 +61,7 @@ const MyTable = ({users,deleteCurrentUser,getUsersData,page,setPage,pageCount,pa
                   <td className="d-flex align-items-center">
                   <Dropdown className="text-center">
                     <Dropdown.Toggle className="dropdown_btn" id="dropdown-basic">
-                     <Badge bg={user.status == "Active" ? "success" :  "danger"}>
+                     <Badge bg={user.status === "Active" ? "success" :  "danger"}>
                       {user.status} <FaCaretDown/>
                      </Badge>
                     </Dropdown.Toggle>

@@ -46,9 +46,7 @@ const navigate = useNavigate()
          }
     }
      getUserById()
-     setTimeout(() => {
-      setLoading(false)
-     }, 1200);
+
   }, [id])
 
  const handleInputChange = (e) =>{
